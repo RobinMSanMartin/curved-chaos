@@ -8,65 +8,62 @@
   </ul>
 </nav>
 
-
 <style>
-.navbar {
-  width: 100%;
-  background: linear-gradient(135deg, #2d3a3a, #248232);
-  padding: 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  position: relative;
-  text-align: center;
-}
+  .navbar {
+    width: 100%;
+    background: linear-gradient(135deg, #2d3a3a, #248232);
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+  }
 
-#menu-toggle {
-  display: none;
-}
+  #menu-toggle {
+    display: none;
+  }
 
-.menu-toggle {
-  font-size: 24px;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  display: none;
-}
-
-.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.menu li {
-  padding: 10px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
-}
-
-.menu a:hover {
-  color: #ffcc00;
-}
-
-@media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
   }
 
   .menu {
-    display: none;
-    flex-direction: column;
-    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
   }
-}
 
+  .menu li {
+    padding: 10px;
+  }
 
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .menu a:hover {
+    color: #ffcc00;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
 </style>
