@@ -20,21 +20,18 @@
   text-align: center;
 }
 
-/* Botón de menú oculto */
 #menu-toggle {
   display: none;
 }
 
-/* Estilo del botón ☰ */
 .menu-toggle {
   font-size: 24px;
   color: white;
   padding: 10px;
   cursor: pointer;
-  display: none; /* Solo en móviles */
+  display: none;
 }
 
-/* Menú visible en pantallas grandes */
 .menu {
   list-style: none;
   padding: 0;
@@ -59,7 +56,6 @@
   color: #ffcc00;
 }
 
-/* 📱 Responsive: menú desplegable en móviles */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -69,11 +65,6 @@
     display: none;
     flex-direction: column;
     text-align: center;
-  }
-
-  /* ✅ Mostrar menú cuando el usuario marca el checkbox */
-  #menu-toggle:checked + .menu {
-    display: flex;
   }
 }
 
