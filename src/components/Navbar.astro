@@ -1,0 +1,81 @@
+<nav class="navbar">
+  <div class="menu-toggle">☰</div>
+  <ul class="menu">
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Contacto</a></li>
+    <li><a href="#">Acerca de</a></li>
+  </ul>
+</nav>
+
+
+<style>
+.navbar {
+  width: 100%;
+  background: linear-gradient(135deg, #2d3a3a, #248232);
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+
+/* Botón de menú oculto */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilo del botón ☰ */
+.menu-toggle {
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: none; /* Solo en móviles */
+}
+
+/* Menú visible en pantallas grandes */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  color: #ffcc00;
+}
+
+/* 📱 Responsive: menú desplegable en móviles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* ✅ Mostrar menú cuando el usuario marca el checkbox */
+  #menu-toggle:checked + .menu {
+    display: flex;
+  }
+}
+
+
+</style>

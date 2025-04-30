@@ -1,0 +1,131 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+//https://dummyjson.com/products/category/smartphones
+const data = await fetch(
+  "https://dummyjson.com/products/category/smartphones"
+).then((response) => response.json());
+---
+
+<Navbar />
+
+<h1>
+  Smartphones ({data.products.length})
+</h1>
+
+<div class="filters">
+  <select id="priceFilter">
+    <option value="">Filtrar por precio</option>
+    <option value="low">Menor a $200</option>
+    <option value="medium">$200 - $500</option>
+    <option value="high">Mayor a $500</option>
+  </select>
+
+  <select id="sizeFilter">
+    <option value="">Filtrar por tamaño</option>
+    <option value="small">Pequeño</option>
+    <option value="medium">Mediano</option>
+    <option value="large">Grande</option>
+  </select>
+
+  <select id="offerFilter">
+    <option value="">Filtrar por oferta</option>
+    <option value="discount">Descuento</option>
+    <option value="new">Nuevo</option>
+    <option value="popular">Popular</option>
+  </select>
+
+  <select id="colorFilter">
+    <option value="">Filtrar por color</option>
+    <option value="black">Negro</option>
+    <option value="white">Blanco</option>
+    <option value="blue">Azul</option>
+    <option value="red">Rojo</option>
+  </select>
+</div>
+
+<div class="container">
+  {
+    data.products.map((product: any) => (
+      <div class="card">
+        <div class="image">
+          <img src={product.thumbnail} alt={"Producto " + product.id} />
+        </div>
+
+        <div class="textcard">
+          <ul>
+            <li>{product.title}</li>
+            <li>{"Detalle: " + product.description}</li>
+          </ul>
+        </div>
+      </div>
+    ))
+  }
+
+  <Footer />
+</div>
+
+<style>
+body{
+  background-color: #ececec;
+}
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .filters select {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .filters select:hover,
+  .filters select:focus {
+    border-color: #007bff;
+    background-color: #eef7ff;
+  }
+
+  .filters select option {
+    font-size: 14px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .card {
+    display: flex;
+    padding: 10px;
+    width: 300px;
+    margin-top: 1rem;
+    background-color: #c8c8c8;
+    border-radius: 10px;
+  }
+
+  .image img {
+    max-width: 120px;
+    border-radius: 10%;
+  }
+
+  .textcard {
+    flex-grow: 1;
+  }
+</style>
